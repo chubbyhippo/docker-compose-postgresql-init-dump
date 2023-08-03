@@ -12,10 +12,11 @@ services:
     db_init:
       image: postgres
       volumes:
-        - ./some-data.backup:/db.dump
+        - ./book.dump:/db.dump
       environment:
         - PGPASSWORD=admin
       command: pg_restore -h db --no-owner --no-privileges -d postgres -U admin db.dump
       depends_on:
         db:
           condition: service_started
+        
