@@ -1,5 +1,4 @@
 services:
-
     db:
       image: postgres
       environment:
@@ -34,4 +33,3 @@ services:
         db:
           condition: service_started
       restart: on-failure
-        
